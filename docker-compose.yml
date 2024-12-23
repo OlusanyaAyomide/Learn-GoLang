@@ -1,0 +1,15 @@
+services:
+  db:
+    image: 'postgres:17.2'
+    container_name: 'postgres-db'
+    environment:
+      POSTGRES_DB: scafold
+      POSTGRES_USER: randomDev
+      POSTGRES_PASSWORD: password
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+
+volumes:
+  db-data:
